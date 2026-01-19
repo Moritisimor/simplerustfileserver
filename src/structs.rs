@@ -21,6 +21,7 @@ impl Config {
         println!("{}", "[SRFS]".green().bold());
         println!("{} {}", "Listening on:".purple().bold(), &self.server_address.blue());
         println!("{} {}", "Serving from:".purple().bold(), &self.shared_dir.blue());
-        println!("{} {}", "At URL:".purple().bold(), &self.url_path.blue())
+        println!("{} {}", "At URL:".purple().bold(), &self.url_path.blue());
+        println!("{} {}", "With Index:".purple().bold(), &self.index_file.blue())
     }
 }
