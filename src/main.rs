@@ -14,10 +14,11 @@ async fn main() -> io::Result<()> {
     args.tell_about_self();
 
     HttpServer::new(move || {
-        App::new()
-        .service(Files::new(&args.url_path, &args.shared_dir)
-            .show_files_listing()
-            .index_file(&args.index_file))
+        App::new().service(
+            Files::new(&args.url_path, &args.shared_dir)
+                .show_files_listing()
+                .index_file(&args.index_file),
+        )
     })
     .bind(args.server_address)?
     .run()
